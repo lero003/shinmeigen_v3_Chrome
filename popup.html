@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>神迷言ジェネレーター</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>本日のお告げ</h1>
+
+  <div class="oracle-container">
+    <div class="fog"></div>
+    <div class="oracle" id="oracle"></div>
+    <div class="symbol" id="symbol"></div>
+    <div class="interpretation" id="interpretation"></div>
+    <div class="translation" id="translation"></div>
+  </div>
+
+  <button id="generateBtn">もう一度受信する</button>
+
+  <!-- データ → ロジックの順で読込（モジュールでなく通常の script） -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

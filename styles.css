@@ -1,0 +1,99 @@
+/* ---------- 基本レイアウト ---------- */
+body {
+  margin: 0;
+  width: 320px;          /* ポップアップ内で横スクロールさせない */
+  font-family: 'Yu Mincho', serif;
+  background: radial-gradient(circle at center,#352b2b,#1a1a1a);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 10px 24px;
+  box-sizing: border-box;
+}
+
+/* タイトル */
+h1 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 8px;
+  color: #f5e8c7;
+  text-align: center;
+}
+
+/* ---------- 神託エリア ---------- */
+.oracle-container {
+  position: relative;
+  width: 100%;
+  padding: 18px 14px 22px;
+  text-align: center;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.oracle-container::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 220px; height: 220px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center,rgba(255,223,0,0.18),transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.fog {
+  position: absolute;
+  top: -40%; left: -40%;
+  width: 180%; height: 180%;
+  background: radial-gradient(ellipse at center,rgba(255,255,255,0.03) 0%,transparent 80%);
+  filter: blur(55px);
+  animation: drift 18s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  0% { transform: translate(0,0) scale(1); }
+  100%{ transform: translate(-12%,-8%) scale(1.05); }
+}
+
+/* ---------- テキスト ---------- */
+.oracle {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+.symbol {
+  font-size: 1.5rem;
+  color: #e0d4b8;
+  margin-bottom: 6px;
+}
+
+.interpretation {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 4px;
+}
+
+.translation {
+  font-size: 0.8rem;
+  color: #a8a8a8;
+}
+
+/* ---------- ボタン ---------- */
+button#generateBtn {
+  margin-top: 14px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  background: rgba(68,68,68,0.85);
+  color: #f5e8c7;
+  border: 1px solid rgba(245,232,199,0.4);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button#generateBtn:hover {
+  background: rgba(102,102,102,0.85);
+}
